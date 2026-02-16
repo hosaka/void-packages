@@ -1,6 +1,6 @@
 # Template file for 'openpgp-card-tools'
 pkgname=openpgp-card-tools
-version=0.10.0
+version=0.11.10
 revision=1
 build_style=cargo
 build_helper=qemu
@@ -8,11 +8,11 @@ hostmakedepends="pkg-config llvm clang"
 makedepends="nettle-devel pcsclite-devel"
 depends="pcsclite pcsc-ccid"
 short_desc="Tools for inspecting, configuring and using OpenPGP cards"
-maintainer="Orphaned <orphan@voidlinux.org>"
+maintainer="Alex March <alex@hosaka.cc>"
 license="MIT, Apache-2.0"
 homepage="https://codeberg.org/openpgp-card/openpgp-card-tools"
 distfiles="https://codeberg.org/openpgp-card/openpgp-card-tools/archive/v${version}.tar.gz"
-checksum=2bea380d0038208d5b6bd93cb7580e6522d4f43bc1e429cc977cb678adb061fb
+checksum=59ba6486878648e3bcaba6f1f62d02e23858faa821306eb395a8df105a0e39a1
 
 post_install() {
 	vlicense "LICENSES/MIT.txt"
