@@ -1,6 +1,6 @@
 # Template file for 'prek'
 pkgname=prek
-version=0.3.4
+version=0.3.5
 revision=1
 build_style=cargo
 build_helper=qemu
@@ -18,7 +18,7 @@ license="MIT"
 homepage="https://prek.j178.dev"
 changelog="https://raw.githubusercontent.com/j178/prek/refs/heads/master/CHANGELOG.md"
 distfiles="https://github.com/j178/prek/archive/refs/tags/v${version}.tar.gz"
-checksum=b321bc99ac19dc1fd433cda433f11c36f6ce5174079d71fcebb471afc6aefd39
+checksum=3d0bf93af3591762b2fce97965fb88f8dc4b750164451162f57f866e26e4bb67
 
 post_install() {
 	for shell in bash fish zsh; do
