@@ -1,6 +1,6 @@
 # Template file for 'prek'
 pkgname=prek
-version=0.5.3
+version=0.5.7
 revision=1
 build_style=cargo
 build_helper=qemu
@@ -19,7 +19,17 @@ license="MIT"
 homepage="https://prek.j178.dev"
 changelog="https://raw.githubusercontent.com/j178/prek/refs/heads/master/CHANGELOG.md"
 distfiles="https://github.com/j178/prek/archive/refs/tags/v${version}.tar.gz"
-checksum=2de788f26f8f32691c848d6ce3345c7df632813b099a3c0f48f10f3b37866d7a
+checksum=c14bfbb5121c24421aea5fbb91a9c835e3e3372e53bdaeb3dedd87cc8eda56b5
+
+# todo: should be fixed in the upcoming versions, see:
+# https://github.com/aws/aws-lc-rs/issues/1252
+# https://github.com/aws/aws-lc-rs/pull/1254
+
+# prek should use aws-lc-sys newer than 0.45.0 in the lock file to remove this
+
+# aws-lc-sys compiles its bundled jitterentropy at -O0 and the source refuses to
+# build with -O2 optimizations. This disables it in favor of getrandom(2).
+export AWS_LC_SYS_NO_JITTER_ENTROPY=1
 
 if [ "$XBPS_TARGET_WORDSIZE" = "32" ]; then
 	# The test suite compares insta snapshots that were recorded on a 64-bit host.
