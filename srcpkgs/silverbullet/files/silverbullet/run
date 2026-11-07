@@ -1,0 +1,5 @@
+#!/bin/sh
+exec 2>&1
+[ -r ./conf ] && . ./conf
+export SB_FOLDER="${SB_FOLDER:-/var/lib/silverbullet}"
+exec chpst -u _silverbullet:_silverbullet silverbullet
